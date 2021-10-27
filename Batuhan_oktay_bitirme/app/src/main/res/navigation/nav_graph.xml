@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewPagerFragment">
+
+
+
+
+    <fragment
+        android:id="@+id/SearchListFragment"
+        android:name="com.patikadev.mvvmsample.ui.filmlist.SearchListFragment"
+        android:label="FilmListFragment"/>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.patikadev.mvvmsample.ui.filmlist.ViewPagerFragment"
+        android:label="ViewPagerFragment" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.patikadev.mvvmsample.ui.filmlist.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
+</navigation>
